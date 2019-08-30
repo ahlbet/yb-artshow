@@ -1,7 +1,6 @@
 class Frame {
   constructor(c) {
     this.c = c;
-    this.currentY = c.y - pictureFrameHeight / 2;
     this.paintSpeed = 1;
     this.lineHeight = 2;
     this.r = 0;
@@ -14,6 +13,7 @@ class Frame {
     this.holdTime = 300;
     this.isHolding = false;
     this.currentFrame = 0;
+    this.currentY = c.y - pictureFrameHeight / 2 - this.lineHeight / 2;
   }
 
   testIfHolding() {
@@ -33,7 +33,7 @@ class Frame {
       if (this.currentHoldTime > this.holdTime) {
         this.clearPictureFrame();
         this.isHolding = false;
-        this.currentY = this.c.y - pictureFrameHeight / 2;
+        this.currentY = this.c.y - pictureFrameHeight / 2 - this.lineHeight / 2;
         // this.currentY = 0;
         this.currentHoldTime = 0;
       }
@@ -41,7 +41,7 @@ class Frame {
   }
 
   jump() {
-    this.currentY += this.lineHeight;
+    this.currentY += this.lineHeight / 2;
   }
 
   clearPictureFrame() {
