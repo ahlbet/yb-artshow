@@ -47,8 +47,13 @@ class Frame {
   clearPictureFrame() {
     noStroke();
     fill(canvasColor);
-    rectMode(CENTER, CENTER);
-    rect(this.c.x, this.c.y, pictureFrameWidth, pictureFrameHeight);
+    rectMode(CORNER);
+    rect(
+      this.c.x - pictureFrameWidth / 2,
+      this.c.y - pictureFrameHeight / 2,
+      pictureFrameWidth,
+      pictureFrameHeight + this.lineHeight
+    );
   }
 
   drawBorder() {
