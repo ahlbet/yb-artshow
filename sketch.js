@@ -60,16 +60,16 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-const seedFrames = () => {
+function seedFrames() {
   let frame1 = new Frame({ x: width / 5, y: height / 2 });
   let frame2 = new Frame({ x: width / 2, y: height / 2 });
   let frame3 = new Frame({ x: (4 * width) / 5, y: height / 2 });
   frames.push(frame1);
   frames.push(frame2);
   frames.push(frame3);
-};
+}
 
-const seedGlobals = () => {
+function seedGlobals() {
   frames = [];
   rSlow = 300;
   gSlow = 400;
@@ -82,4 +82,4 @@ const seedGlobals = () => {
   pictureFrameHeight = windowHeight / 2;
   isResizing = false;
   resizeTimer = 0;
-};
+}

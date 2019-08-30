@@ -16,7 +16,7 @@ class Frame {
     this.currentFrame = 0;
   }
 
-  testIfHolding = () => {
+  testIfHolding() {
     this.currentFrame += this.paintSpeed;
 
     if (this.currentY < this.c.y + pictureFrameHeight / 2) {
@@ -38,20 +38,20 @@ class Frame {
         this.currentHoldTime = 0;
       }
     }
-  };
+  }
 
-  jump = () => {
+  jump() {
     this.currentY += this.lineHeight;
-  };
+  }
 
-  clearPictureFrame = () => {
+  clearPictureFrame() {
     noStroke();
     fill(canvasColor);
     rectMode(CENTER, CENTER);
     rect(this.c.x, this.c.y, pictureFrameWidth, pictureFrameHeight);
-  };
+  }
 
-  drawBorder = () => {
+  drawBorder() {
     noFill();
     stroke(30);
     strokeWeight(frameThickness);
@@ -62,9 +62,9 @@ class Frame {
       pictureFrameWidth + frameThickness,
       pictureFrameHeight + frameThickness
     );
-  };
+  }
 
-  paint = () => {
+  paint() {
     this.r = map(
       noise(
         this.currentFrame / this.rSlow,
@@ -110,5 +110,5 @@ class Frame {
       pictureFrameWidth,
       this.lineHeight
     );
-  };
+  }
 }
