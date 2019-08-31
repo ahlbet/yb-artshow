@@ -1,16 +1,16 @@
 class Frame {
-  constructor(c) {
+  constructor(c, ht) {
     this.c = c;
     this.paintSpeed = 1;
-    this.lineHeight = 2;
+    this.lineHeight = 1;
     this.r = 0;
     this.g = 0;
     this.b = 0;
-    this.rSlow = floor(random(400, 1200));
-    this.gSlow = floor(random(400, 1200));
-    this.bSlow = floor(random(400, 1200));
+    this.rSlow = floor(random(400, 1200)) * 2;
+    this.gSlow = floor(random(400, 1200)) * 2;
+    this.bSlow = floor(random(400, 1200)) * 2;
     this.currentHoldTime = 0;
-    this.holdTime = 300;
+    this.holdTime = ht * 100;
     this.isHolding = false;
     this.currentFrame = 0;
     this.currentY = c.y - pictureFrameHeight / 2 - this.lineHeight / 2;
@@ -31,7 +31,7 @@ class Frame {
       this.currentHoldTime++;
 
       if (this.currentHoldTime > this.holdTime) {
-        this.clearPictureFrame();
+        // this.clearPictureFrame();
         this.isHolding = false;
         this.currentY = this.c.y - pictureFrameHeight / 2 - this.lineHeight / 2;
         // this.currentY = 0;
