@@ -10,7 +10,7 @@ class Frame {
     this.gSlow = floor(random(400, 1200)) * 2;
     this.bSlow = floor(random(400, 1200)) * 2;
     this.currentHoldTime = 0;
-    this.holdTime = ht * 100;
+    // this.holdTime = ht * 100;
     this.isHolding = false;
     this.currentFrame = 0;
     this.currentY = c.y - pictureFrameHeight / 2 - this.lineHeight / 2;
@@ -27,11 +27,13 @@ class Frame {
       this.isHolding = true;
     }
 
+    if (this.currentHoldTime === 0) this.holdTime = floor(random(100, 600));
+
     if (this.isHolding) {
       this.currentHoldTime++;
 
       if (this.currentHoldTime > this.holdTime) {
-        // this.clearPictureFrame();
+        this.clearPictureFrame();
         this.isHolding = false;
         this.currentY = this.c.y - pictureFrameHeight / 2 - this.lineHeight / 2;
         // this.currentY = 0;
