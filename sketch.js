@@ -78,8 +78,8 @@ function seedGlobals() {
   frameThickness = 14;
   canvasColor = 240;
   currentFrame = 0;
-  pictureFrameWidth = windowWidth / 6;
-  pictureFrameHeight = windowHeight / 2;
+  pictureFrameWidth = floor(windowWidth / 6);
+  pictureFrameHeight = floor(windowHeight / 2);
   isResizing = false;
   resizeTimer = 0;
 }
